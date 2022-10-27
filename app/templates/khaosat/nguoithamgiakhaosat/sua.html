@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    {% for i in employee %}
+    <form  method="post" action="/khaosat/{{idurl}}/quanlynguoithamgia/{{i.id}}/capnhat">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Chi tiết cập nhật</h3>
+            </p>
+        </div>
+         <div>
+            <p>Tên đăng nhập:</p>
+            <div>
+                <input type="text" name="username" value="{{i.username}}" />
+            </div>
+        </div>
+                 <div>
+            <p>Mật khẩu:</p>
+            <div>
+                <input type="text" name="password1" value="{{i.password1}}"/>
+            </div>
+        </div>
+         <div>
+            <p>Email:</p>
+            <div>
+                <input type="email" name="email" value="{{i.email}}" />
+            </div>
+        </div>
+        <div>
+            <p>Số điện thoại:</p>
+            <div>
+                <input type="text" name="sodienthoai" value="{{i.sodienthoai}}" />
+            </div>
+        </div>
+        <div>
+            <p>Thông tin khác:</p>
+            <div>
+                <input type="text" name="thongtinkhac" value="{{i.thongtinkhac}}" />
+            </div>
+        </div>
+         <div>
+            <br>
+            <input type="submit" value="Cập nhật" />
+        </div>
+
+        {% endfor %}
+     </form>
+        {% if msg %}
+        <span class="text-error">{{form.errors}}</span>
+        <h2>{{ msg | safe }}</h2>
+        {% endif %}
+
+</body>
+
+</html>

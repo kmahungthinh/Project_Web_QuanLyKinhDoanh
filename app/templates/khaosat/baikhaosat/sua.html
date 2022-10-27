@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <form method="post">
+    {% csrf_token %}
+   <h2>Sửa câu khảo sát</h2> <br><input type="text" name="cauhoi" value="{{caukhaosat}}" >
+  <input type="submit"  value="Xác nhận" class="btn btn-pill text-white btn-block btn-primary">
+  </form>
+</div>
+</body>
+</html>

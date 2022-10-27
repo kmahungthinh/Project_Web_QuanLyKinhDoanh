@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Role</title>
+</head>
+<body>
+      <form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><h2>ID</h2></td>
+            <td>&emsp;&emsp;</td>
+            <td><h2>Username</h2></td>
+            <td>&emsp;&emsp;</td>
+            <td><h2>Vai trò</h2></td>
+        </tr>
+    {% for i in vaitro %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>&emsp;&emsp;</td>
+        <td>{{i.username}}</td>
+        <td>&emsp;&emsp;</td>
+
+        {% if i.laquantrivien == 1 %}
+         <td>
+                 {% if i.username == 'admin' %}
+                  <input type="radio" name="{{i.username}}" value="qtv"checked>Quản trị viên
+                 {% else %}
+                 <input type="radio" name="{{i.username}}" value="qtv"checked>Quản trị viên
+                 <input type="radio" name="{{i.username}}" value="nvkd">Nhân viên kinh doanh
+                 <input type="radio" name="{{i.username}}" value="kh">Khách hàng
+                 <input type="radio" name="{{i.username}}" value="ntgks" >Người tham gia khảo sát
+                 {% endif %}
+
+        </td>
+        {% endif %}
+        {% if i.lanhanvienkinhdoanh == 1 %}
+              <td><input type="radio" name="{{i.username}}" value="qtv">Quản trị viên
+              <input type="radio" name="{{i.username}}" value="nvkd"checked>Nhân viên kinh doanh
+              <input type="radio" name="{{i.username}}" value="kh">Khách hàng
+              <input type="radio" name="{{i.username}}" value="ntgks" >Người tham gia khảo sát
+        </td>
+        {% endif %}
+        {% if i.lakhachhang == 1 %}
+        <td> <input type="radio" name="{{i.username}}" value="qtv">Quản trị viên
+              <input type="radio" name="{{i.username}}" value="nvkd">Nhân viên kinh doanh
+              <input type="radio" name="{{i.username}}" value="kh"checked>Khách hàng
+              <input type="radio" name="{{i.username}}" value="ntgks" >Người tham gia khảo sát
+        </td>
+        {% endif %}
+        {% if i.languoithamgiakhaosat == 1 %}
+            <td> <input type="radio" name="{{i.username}}" value="qtv">Quản trị viên
+              <input type="radio" name="{{i.username}}" value="nvkd">Nhân viên kinh doanh
+              <input type="radio" name="{{i.username}}" value="kh">Khách hàng
+              <input type="radio" name="{{i.username}}" value="ntgks" checked>Người tham gia khảo sát
+        </td>
+        {% endif %}
+
+    </tr>
+    {% endfor %}
+    </table>
+          <br>
+          <input type="submit"  value="Xác nhận" class="btn btn-pill text-white btn-block btn-primary">
+          </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực thi</title>
+</head>
+<body>
+<form  method="post">
+    {% csrf_token %}
+    <h3>Xin chào {{tennguoidung}}, bạn hãy thực hiện bài khảo sát dưới đây</h3>
+    {% for i in caukhaosat %}
+    <div>{{i.1}}</div>
+    Trả lời <input type="text" name="{{i.0}}"  class="form-control">
+    {% endfor %}
+    <br>
+    <br>
+  <input type="submit"  value="Xác nhận" class="btn btn-pill text-white btn-block btn-primary">
+</form>
+</body>
+</html>

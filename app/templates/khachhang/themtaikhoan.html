@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khách hàng</title>
+    {% load static %}
+
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <br>
+                <h3>Thêm khách hàng</h3>
+            <div>
+               Tên đăng nhập <br>{{khform.username}}
+            </div>
+            <div>
+                Mật khẩu <br>{{khform.password}}
+            </div>
+           <div>
+                Mã khách hàng <br>{{khform.makhachhang}}
+            </div>
+            <div>
+                Họ và tên:<br>{{khform.hoten}}
+            </div>
+             <div>
+                Địa chỉ:<br>{{khform.diachi}}
+            </div>
+            <div>
+               Số điện thoại:<br>{{khform.sodienthoai}}
+            </div>
+            <div>
+               Mã dịnh danh:<br>{{khform.madinhdanh}}
+            </div>
+            <div>
+                Email:<br>{{khform.email}}
+            </div>
+             <div>
+               Mô tả nội dung yêu cầu:<br>{{khform.motanoidungyeucau}}
+            </div>
+            <div>
+               Giá tiền:<br>{{khform.giatien}}
+            </div>
+            <div>
+               Số lượng khảo sát:<br>{{khform.soluongkhaosat}}
+            </div>
+            <div>
+               Số câu khảo sát:<br>{{khform.socaukhaosat}}
+            </div>
+            <div>
+               Kích hoạt:<br>{{khform.kichhoat}}
+            </div>
+            <div>
+                <span class="text-error">{{ khform.errors }}</span>
+                 <span class="text-error">{{ dkform.errors }}</span>
+                <br>
+                <input type="submit"  value="Xác nhận" class="btn btn-pill text-white btn-block btn-primary">
+            </div>
+
+        </div>
+
+        {% if msg %}
+        <h4>{{ msg | safe }}</h4>
+        {% endif %}
+
+    </form>
+</body>
+
+</html>

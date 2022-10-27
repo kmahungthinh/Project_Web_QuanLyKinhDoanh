@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+
+    <form  method="post" >
+        {% csrf_token %}
+        <div>
+            <br>
+            
+                <h3>Chi tiết cập nhật</h3>
+            
+        </div>
+         <div>
+            Tên đăng nhập:
+            <div>
+                <input type="text" name="username" value="{{khachhang.username}}" />
+            </div>
+        </div>
+                 <div>
+            Mật khẩu:
+            <div>
+                <input type="text" name="password" value="{{khachhang.password}}"/>
+            </div>
+        </div>
+        <div>
+            Mã khách hàng:
+            <div>
+                <input type="text" name="makhachhang" value="{{khachhang.makhachhang}}" />
+            </div>
+        </div>
+        <div>
+            Họ và tên:
+            <div>
+                <input type="text" name="hoten" value="{{khachhang.hoten}}" />
+            </div>
+        </div>
+        <div>
+            Địa chỉ:
+            <div>
+                <input type="text" name="diachi" value="{{khachhang.diachi}}" />
+            </div>
+        </div>
+        <div>
+            Số điện thoại:
+            <div>
+                <input type="text" name="sodienthoai" value="{{khachhang.sodienthoai}}" />
+            </div>
+        </div>
+        <div>
+            Mã định danh :
+            <div>
+                <input type="text" name="madinhdanh" value="{{khachhang.madinhdanh}}" />
+            </div>
+        </div>
+        <div>
+            Email:
+            <div>
+                <input type="email" name="email" value="{{khachhang.email}}" />
+            </div>
+        </div>
+        <div>
+            Mô tả nội dung yêu cầu:
+            <div>
+                <input type="text" name="motanoidungyeucau" value="{{khachhang.motanoidungyeucau}}" />
+            </div>
+        </div>
+        <div>
+            Giá tiền:
+            <div>
+                <input type="text" name="giatien" value="{{khachhang.giatien}}" />
+            </div>
+        </div>
+         <div>
+            Số lượng khảo sát:
+            <div>
+                <input type="text" name="soluongkhaosat" value="{{khachhang.soluongkhaosat}}" />
+            </div>
+        </div>
+         <div>
+            Số câu khảo sát:
+            <div>
+                <input type="text" name="socaukhaosat" value="{{khachhang.socaukhaosat}}" />
+            </div>
+        </div>
+        <div>
+            <div>
+                {% if khachhang.kichhoat == 1 %}
+                Kích hoạt <input type="checkbox" name="kichhoat" value="True" checked/>
+                {% else %}
+                Kích hoạt <input type="checkbox" name="kichhoat" value="False"/>
+                {% endif %}
+            </div>
+        <div>
+            <br>
+            <input type="submit" value="Cập nhật" />
+        </div>
+
+
+     </form>
+        {% if msg %}
+        <span class="text-error">{{form.errors}}</span>
+        <h2>{{ msg | safe }}</h2>
+        {% endif %}
+
+</body>
+
+</html>

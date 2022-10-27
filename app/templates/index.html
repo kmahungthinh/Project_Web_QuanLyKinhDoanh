@@ -1,0 +1,58 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Page</title>
+  </head>
+  <body>
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <h6><img src="{% static 'images/thinh.png' %}" alt="Girl in a jacket" width="100" height="120">
+                      <br>
+                      Họ và tên: Vũ Hưng Thịnh
+                      <br>
+                      Mã sinh viên: AT150353
+                      <br>
+                      Website: Quản lý Kinh Doanh
+                      <br>
+                      STT điểm danh: 41
+                  </h6>
+                  <div class="mb-4">
+                      <h1><center>Xin chào</center></h1>
+                  </div>
+                  <label>Bạn đã có tài khoản</label>
+                  <form  method="post">
+                      {% csrf_token %}
+                  <input type="submit" value="Đăng nhập" name="dangnhap" class="btn btn-pill text-white btn-block btn-primary">
+                  <label>Chưa có tài khoản!</label>
+                      <input type="submit" value="Đăng ký" name="dangky" class="btn btn-pill text-white btn-block btn-primary">
+                      <form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+
+  <form method="post">
+    {% csrf_token %}
+      <h2>Số bài khảo sát là {{sobai}}, số câu khảo sát trên 1 bài là {{socau}}</h2>
+  <input type="submit"  value="Tạo cuộc khảo sát" class="btn btn-pill text-white btn-block btn-primary">
+  </form>
+</body>
+</html>

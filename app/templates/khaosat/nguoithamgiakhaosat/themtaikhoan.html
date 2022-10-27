@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Thêm người tham gia khảo sát</h3>
+            </p>
+           <div>
+               Tài khoản <br><input type="text" name="username"  class="form-control">
+            </div>
+            <div>
+                Mật khẩu <br><input type="text" name="password"   class="form-control">
+            </div>
+            <div>
+                Email:<br>{{form.email}}
+            </div>
+            <div>
+                Số điện thoại:<br>{{form.sodienthoai}}
+            </div>
+            <div>
+                Thông tin khác:<br>{{form.thongtinkhac}}
+            </div>
+            <div>
+                <br>
+                <input type="submit"  value="Xác nhận" class="btn btn-pill text-white btn-block btn-primary">
+            </div>
+        </div>
+        {% if msg %}
+        {{ msg | safe }}
+        {% endif %}
+
+
+    </form>
+</body>
+
+</html>

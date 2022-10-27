@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Append</title>
+</head>
+<body>
+<h2>Lựa chọn người dùng theo tài khoản để thêm vào cuộc khảo sát {{cuockhaosat}}</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <select name="nametaikhoanthamgiakhaosat">
+      {% for i in taikhoanthamgiakhaosat %}
+      <option value="{{i}}">{{i}}</option>
+      {% endfor %}
+      <p><input type="submit" name="send" value="Xác nhận"></p>
+         <h3>{{msg}}</h3>
+</form>
+</body>
+</html>

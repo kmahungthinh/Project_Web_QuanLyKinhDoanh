@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị người tham gia khảo sát</title>
+</head>
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+
+<body>
+<div style="overflow-x:auto;">
+<table>
+        <thead>
+            <tr>
+                <th>ID</th>
+               
+                <th>Tên đăng nhập</th>
+                
+                <th>Email</th>
+               
+                <th>Số điện thoại</th>
+              
+                <th>Thông tin khác</th>
+                
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in tgks %}
+            <tr>
+                <td>{{i.id}}</td>
+                
+                <td>{{i.username}}</td>
+                
+                <td>{{i.email}}</td>
+                
+                <td>{{i.sodienthoai}}</td>
+                
+                <td>{{i.thongtinkhac}}</td>
+                
+                <td>
+                    <a href="/khaosat/{{idurl}}/quanlynguoithamgia/{{i.id}}/sua">Sửa tài khoản</a>
+                    &emsp;
+                    <a href="/khaosat/{{idurl}}/quanlynguoithamgia/{{i.id}}/xoakhoicuockhaosat">Xóa khỏi cuộc khảo sát</a>
+                    &emsp;
+                    <a href="/khaosat/{{idurl}}/quanlynguoithamgia/{{i.id}}/xoataikhoan">Xóa tài khoản</a>
+                    &emsp;
+                    <a href="/khaosat/{{idurl}}/quanlynguoithamgia/{{i.id}}/xemketqua">Xem kết quả bài khảo sát</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<br>
+<br>
+<button><a style="color:black;" href="/khaosat/{{idurl}}/quanlynguoithamgia/themtaikhoan">Thêm tài khoản</a></button>
+<button><a style="color:black;" href="/khaosat/{{idurl}}/quanlynguoithamgia/themvaocuockhaosat">Thêm vào cuộc khảo sát</a></button>
+
+</body>
+</html>

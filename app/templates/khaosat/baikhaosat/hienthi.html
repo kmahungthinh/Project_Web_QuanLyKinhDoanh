@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+
+</head>
+<body>
+
+<table border="1">
+<tr><th>Câu khảo sát</th>
+    <th>Nội dung câu khảo sát</th>
+    <th>Thao tác</th>
+
+
+    {% for i in caukhaosat %}
+    <tr><td>{{i.0}}</td>
+    <td>{{i.1}}</td>
+    <td><a href="/khaosat/{{id}}/baikhaosat/sua/{{i.0}}">Sửa</a></td>
+    {% endfor %}
+
+</table>
+Trạng thái: {{msg}}
+
+</body>
+</html>

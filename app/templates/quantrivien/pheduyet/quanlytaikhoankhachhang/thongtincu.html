@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+
+    <form  method="post" >
+        {% csrf_token %}
+        <div>
+            <br>
+                <h3>Thông tin cũ tài khoản</h3>
+        </div>
+         <div>
+            Tên đăng nhập:{{thongtincu.username}}
+        </div>
+        <div>
+            Mật khẩu:{{thongtincu.password}}
+        </div>
+        <div>
+            Mã khách hàng:{{thongtincu.makhachhang}}
+
+        </div>
+        <div>
+            Họ và tên:{{thongtincu.hoten}}
+        </div>
+        <div>
+            Địa chỉ:{{thongtincu.diachi}}
+        </div>
+        <div>
+            Số điện thoại:{{thongtincu.sodienthoai}}
+        </div>
+        <div>
+            Mã định danh :{{thongtincu.madinhdanh}}
+        </div>
+        <div>
+            Email:{{thongtincu.email}}
+        </div>
+        <div>
+            Mô tả nội dung yêu cầu:{{thongtincu.motanoidungyeucau}}
+        </div>
+        <div>
+            Giá tiền:{{thongtincu.giatien}}
+        </div>
+         <div>
+            Số lượng khảo sát:{{thongtincu.soluongkhaosat}}
+        </div>
+         <div>
+            Số câu khảo sát:{{thongtincu.socaukhaosat}}
+        </div>
+        <div>
+            Kích hoạt:{{thongtincu.kichhoat}}
+        <div>
+            <br>
+            <input type="submit" value="Cập nhật" />
+        </div>
+
+
+     </form>
+        {% if msg %}
+        <span class="text-error">{{form.errors}}</span>
+        <h2>{{ msg | safe }}</h2>
+        {% endif %}
+
+</body>
+
+</html>

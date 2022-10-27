@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Permission</title>
+</head>
+<body>
+ <form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><h2>ID</h2></td>
+            <td>&emsp;&emsp;</td>
+            <td><h2>Username</h2></td>
+            <td>&emsp;&emsp;</td>
+            <td><h2>Phân quyền</h2></td>
+        </tr>
+    {% for i in nvkd %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>&emsp;&emsp;</td>
+        <td>{{i.username}}</td>
+        <td>&emsp;&emsp;</td>
+
+        <td>
+            {% if i.xemkhachhang == 1 %}
+            Xem khách hàng<input type="checkbox" name="{{i.username}}" value="xemkhachhang" checked>
+            {% else %}
+            Xem khách hàng<input type="checkbox" name="{{i.username}}" value="xemkhachhang">
+            {% endif %}
+            &emsp;
+            {% if i.themkhachhang == 1 %}
+            Thêm khách hàng<input type="checkbox" name="{{i.username}}" value="themkhachhang" checked>
+            {% else %}
+            Thêm khách hàng<input type="checkbox" name="{{i.username}}" value="themkhachhang">
+            {% endif %}
+            &emsp;
+            {% if i.suakhachhang == 1 %}
+            Sửa khách hàng<input type="checkbox" name="{{i.username}}" value="suakhachhang" checked>
+            {% else %}
+            Sửa khách hàng<input type="checkbox" name="{{i.username}}" value="suakhachhang">
+            {% endif %}
+            &emsp;
+            {% if i.xoakhachhang == 1 %}
+            Xóa khách hàng<input type="checkbox" name="{{i.username}}" value="xoakhachhang" checked>
+            {% else %}
+            Xóa khách hàng<input type="checkbox" name="{{i.username}}" value="xoakhachhang">
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+          <br>
+          <input type="submit"  value="Xác nhận" class="btn btn-pill text-white btn-block btn-primary">
+          </form>
+</body>
+</html>

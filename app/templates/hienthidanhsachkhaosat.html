@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table>
+        <thead>
+        </thead>
+             <tr>
+                 <th>Khảo sát</th>
+                 <th>&emsp;&emsp;</td>
+                 <th>Quản lý người tham gia khảo sát</th>
+                 <th>&emsp;&emsp;</td>
+                 <th>Quản lý bài khảo sát</th>
+            </tr>
+        <tbody>
+            {% for i in soLuongKhaoSat %}
+            <tr>
+                <td>
+                    <a>Khảo sát {{i}}</a>
+                </td>
+                <td>
+                    &emsp;&emsp;
+                </td>
+                <td>
+                    <a href="/khaosat/{{i}}/quanlynguoithamgia/hienthi">Xác nhận</a>
+                </td>
+                <td>
+                    &emsp;&emsp;
+                </td>
+                <td>
+                    <a href="/khaosat/{{i}}/baikhaosat/hienthi">Xác nhận</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+</body>
+</html>

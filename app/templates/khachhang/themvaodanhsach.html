@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Append</title>
+</head>
+<body>
+<h2>Lựa chọn người dùng theo tài khoản khách hàng để thêm vào danh sách</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <select name="namekhachhangthemvaodanhsach">
+      {% for i in khachhang %}
+      <option value="{{i}}">{{i}}</option>
+      {% endfor %}
+      <p><input type="submit" name="send" value="Xác nhận"></p>
+</form>
+</body>
+</html>

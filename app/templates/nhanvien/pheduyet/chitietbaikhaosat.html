@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>STT</td>
+            <td>Nội dung</td>
+        </tr>
+    {% for i in caukhaosat %}
+    <tr>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

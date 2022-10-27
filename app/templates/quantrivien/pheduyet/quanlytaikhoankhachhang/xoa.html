@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Mã khách hàng</th>
+                <th>Tên người dùng</th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
+                <th>Mã định danh</th>
+                <th>Email</th>
+                <th>Mô tả nội dung yêu cầu</th>
+                <th>Giá tiền</th>
+                <th>Số lượng khảo sát</th>
+                <th>Số câu khảo sát</th>
+                <th>Kích hoạt</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+        <a href="/dangxuat">Đăng xuất</a>
+        <h1>Hàng đợi phê duyệt xóa</h1>
+            {% for i in hdqtvpdkhxoa %}
+
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.makhachhang}}</td>
+                <td>{{i.hoten}}</td>
+                <td>{{i.diachi}}</td>
+                <td>{{i.sodienthoai}}</td>
+                <td>{{i.madinhdanh}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.motanoidungyeucau}}</td>
+                <td>{{i.giatien}}</td>
+                <td>{{i.soluongkhaosat}}</td>
+                <td>{{i.socaukhaosat}}</td>
+                <td>{{i.kichhoat}}</td>
+                <td>
+                <button><a style="color:black;" href="/quantrivien/pheduyet/quanlytaikhoankhachhang/xoa/{{i.id}}">Phê duyệt xóa</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+</body>
+</html>
