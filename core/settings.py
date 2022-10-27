@@ -128,6 +128,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'ttahungthinh@gmail.com'
+EMAIL_HOST_USER = ''
 #Vào đây để tạo mật khẩu ứng dụng https://myaccount.google.com/apppasswords
-EMAIL_HOST_PASSWORD = 'bblxqpcaatkcblhl'
+EMAIL_HOST_PASSWORD = ''
