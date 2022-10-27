@@ -128,8 +128,10 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
 EMAIL_USE_SSL = False
-#EMAIL_HOST_USER là tên Email VD: atttkma@gmail.com
+#EMAIL_HOST_USER là tên Email 
+#VD: EMAIL_HOST_USER = 'atttkma@gmail.com'
 EMAIL_HOST_USER = ''
-#Mật khẩu ứng dụng email 16 ký tự VD: btaxqpcaatffddee
+#Mật khẩu ứng dụng email 16 ký tự 
+#VD: EMAIL_HOST_USER = 'btaxqpcaatffddee'
 #Vào đây để tạo mật khẩu ứng dụng https://myaccount.google.com/apppasswords
 EMAIL_HOST_PASSWORD = ''
