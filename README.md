@@ -2,10 +2,10 @@
 Source code Website Quản lý kinh doanh
 
 chạy web: python manage.py runserver
-=>Tài khoản
-admin
-nhanvien1
-khachhang1
+=>Tài khoản mặc định
+admin,
+nhanvien1,
+khachhang1,
 tgks1
 =>Mật khẩu
 12345678Aa@
