@@ -132,6 +132,6 @@ EMAIL_USE_SSL = False
 #VD: EMAIL_HOST_USER = 'atttkma@gmail.com'
 EMAIL_HOST_USER = ''
 #Mật khẩu ứng dụng email 16 ký tự 
-#VD: EMAIL_HOST_USER = 'btaxqpcaatffddee'
+#VD: EMAIL_HOST_PASSWORD = 'btaxqpcaatffddee'
 #Vào đây để tạo mật khẩu ứng dụng https://myaccount.google.com/apppasswords
 EMAIL_HOST_PASSWORD = ''
